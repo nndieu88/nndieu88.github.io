@@ -1,1 +1,223 @@
-đây là nội dung file index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Ngoc Dieu | Java Backend Developer</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .typing {
+            color: #00d4ff;
+        }
+
+        /* CARD */
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* SKILLS */
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .bar {
+            height: 6px;
+            background: #00d4ff;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+
+        /* FADE ANIMATION */
+        .hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CONTACT */
+        .contact a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Nguyen Ngoc Dieu</h1>
+    <h2 class="typing"></h2>
+    <p>Java Backend Developer | Microservices | High Performance Systems</p>
+</section>
+
+<!-- ABOUT -->
+<section class="hidden">
+    <h2>About Me</h2>
+    <div class="card">
+        Passionate Java Backend Developer with 5+ years experience building enterprise systems.
+        Strong in Spring Boot, Microservices, and system optimization.
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="hidden">
+    <h2>Skills</h2>
+    <div class="grid grid-2">
+        <div>
+            <div class="skill">Java / Spring Boot<div class="bar" style="width:90%"></div></div>
+            <div class="skill">Microservices<div class="bar" style="width:85%"></div></div>
+            <div class="skill">Kafka / Messaging<div class="bar" style="width:80%"></div></div>
+        </div>
+        <div>
+            <div class="skill">MongoDB / SQL<div class="bar" style="width:85%"></div></div>
+            <div class="skill">Docker / Kubernetes<div class="bar" style="width:80%"></div></div>
+            <div class="skill">CI/CD<div class="bar" style="width:75%"></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="hidden">
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>NextPay (2023 - Present)</h3>
+        <p>Developed microservices, Kafka pipelines, real-time systems, IoT TingBox.</p>
+    </div>
+
+    <div class="card">
+        <h3>Bao Viet Insurance (2022 - 2023)</h3>
+        <p>Migrated legacy system to Spring Boot, optimized performance.</p>
+    </div>
+
+    <div class="card">
+        <h3>Softdreams (2020 - 2022)</h3>
+        <p>Accounting system, SQL optimization, large-scale data processing.</p>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="hidden">
+    <h2>Projects</h2>
+
+    <div class="grid grid-2">
+
+        <div class="card">
+            <h3>TingBox</h3>
+            <p>IoT speaker for real-time transaction notifications.</p>
+        </div>
+
+        <div class="card">
+            <h3>NextShop</h3>
+            <p>E-commerce management platform.</p>
+        </div>
+
+        <div class="card">
+            <h3>Notify</h3>
+            <p>Push notification system using FCM.</p>
+        </div>
+
+        <div class="card">
+            <h3>Loyalty</h3>
+            <p>Customer points & promotion system.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="hidden contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:nndieu88@gmail.com">nndieu88@gmail.com</a></p>
+    <p>Phone: 0373246168</p>
+</section>
+
+<script>
+    // Typing animation
+    const text = "Senior Java Backend Developer";
+    let i = 0;
+    function typing() {
+        if (i < text.length) {
+            document.querySelector(".typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, 50);
+        }
+    }
+    typing();
+
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    });
+
+    document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
