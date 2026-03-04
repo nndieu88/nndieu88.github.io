@@ -1,222 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyen Ngoc Dieu | Java Backend Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyen Ngoc Dieu | Java Backend Developer</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        body {
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
-            overflow-x: hidden;
-        }
+body {
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+}
 
-        section {
-            padding: 80px 10%;
-        }
+section {
+    padding: 80px 10%;
+}
 
-        h1, h2 {
-            margin-bottom: 20px;
-        }
+h1 { font-size: 48px; }
+h2 { margin-bottom: 20px; }
 
-        /* HERO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .hero h1 {
-            font-size: 48px;
-        }
+.typing { color: #00d4ff; }
 
-        .typing {
-            color: #00d4ff;
-        }
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    cursor: pointer;
+}
 
-        /* CARD */
-        .card {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
-        }
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+/* GRID */
+.grid {
+    display: grid;
+    gap: 20px;
+}
 
-        /* GRID */
-        .grid {
-            display: grid;
-            gap: 20px;
-        }
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
+/* ANIMATION */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
 
-        /* SKILLS */
-        .skill {
-            margin-bottom: 10px;
-        }
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .bar {
-            height: 6px;
-            background: #00d4ff;
-            width: 0;
-            transition: width 1.5s ease;
-        }
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+}
 
-        /* FADE ANIMATION */
-        .hidden {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s;
-        }
+.modal-content {
+    background: #1e2a38;
+    margin: 5% auto;
+    padding: 30px;
+    width: 70%;
+    border-radius: 12px;
+    animation: fadeIn 0.4s ease;
+}
 
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
 
-        /* CONTACT */
-        .contact a {
-            color: #00d4ff;
-            text-decoration: none;
-        }
-    </style>
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.tech {
+    margin-top: 15px;
+    color: #00d4ff;
+}
+</style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
     <h1>Nguyen Ngoc Dieu</h1>
     <h2 class="typing"></h2>
-    <p>Java Backend Developer | Microservices | High Performance Systems</p>
+    <p>Java Backend Developer | Microservices | Kafka | Kubernetes</p>
 </section>
 
-<!-- ABOUT -->
-<section class="hidden">
-    <h2>About Me</h2>
-    <div class="card">
-        Passionate Java Backend Developer with 5+ years experience building enterprise systems.
-        Strong in Spring Boot, Microservices, and system optimization.
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section class="hidden">
-    <h2>Skills</h2>
-    <div class="grid grid-2">
-        <div>
-            <div class="skill">Java / Spring Boot<div class="bar" style="width:90%"></div></div>
-            <div class="skill">Microservices<div class="bar" style="width:85%"></div></div>
-            <div class="skill">Kafka / Messaging<div class="bar" style="width:80%"></div></div>
-        </div>
-        <div>
-            <div class="skill">MongoDB / SQL<div class="bar" style="width:85%"></div></div>
-            <div class="skill">Docker / Kubernetes<div class="bar" style="width:80%"></div></div>
-            <div class="skill">CI/CD<div class="bar" style="width:75%"></div></div>
-        </div>
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="hidden">
-    <h2>Experience</h2>
-
-    <div class="card">
-        <h3>NextPay (2023 - Present)</h3>
-        <p>Developed microservices, Kafka pipelines, real-time systems, IoT TingBox.</p>
-    </div>
-
-    <div class="card">
-        <h3>Bao Viet Insurance (2022 - 2023)</h3>
-        <p>Migrated legacy system to Spring Boot, optimized performance.</p>
-    </div>
-
-    <div class="card">
-        <h3>Softdreams (2020 - 2022)</h3>
-        <p>Accounting system, SQL optimization, large-scale data processing.</p>
-    </div>
-
-</section>
-
-<!-- PROJECTS -->
 <section class="hidden">
     <h2>Projects</h2>
-
     <div class="grid grid-2">
 
-        <div class="card">
+        <div class="card project" data-id="tingbox">
             <h3>TingBox</h3>
-            <p>IoT speaker for real-time transaction notifications.</p>
+            <p>IoT speaker for real-time transaction notifications</p>
         </div>
 
-        <div class="card">
+        <div class="card project" data-id="nextshop">
             <h3>NextShop</h3>
-            <p>E-commerce management platform.</p>
+            <p>E-commerce management platform</p>
         </div>
 
-        <div class="card">
+        <div class="card project" data-id="notify">
             <h3>Notify</h3>
-            <p>Push notification system using FCM.</p>
+            <p>Push notification system (FCM)</p>
         </div>
 
-        <div class="card">
+        <div class="card project" data-id="loyalty">
             <h3>Loyalty</h3>
-            <p>Customer points & promotion system.</p>
+            <p>Customer loyalty & promotion system</p>
+        </div>
+
+        <div class="card project" data-id="crm">
+            <h3>Customer Care</h3>
+            <p>CRM system for customer management</p>
         </div>
 
     </div>
 </section>
 
-<!-- CONTACT -->
-<section class="hidden contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:nndieu88@gmail.com">nndieu88@gmail.com</a></p>
-    <p>Phone: 0373246168</p>
-</section>
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="title"></h2>
+        <p id="desc"></p>
+
+        <h3>Responsibilities</h3>
+        <ul id="resp"></ul>
+
+        <h3>Technologies</h3>
+        <p id="tech" class="tech"></p>
+    </div>
+</div>
 
 <script>
-    // Typing animation
-    const text = "Senior Java Backend Developer";
-    let i = 0;
-    function typing() {
-        if (i < text.length) {
-            document.querySelector(".typing").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, 50);
-        }
+// typing
+const text = "Senior Java Backend Developer";
+let i = 0;
+function typing(){
+    if(i < text.length){
+        document.querySelector(".typing").innerHTML += text[i];
+        i++;
+        setTimeout(typing, 50);
     }
-    typing();
+}
+typing();
 
-    // Scroll animation
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-        });
+// scroll animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add("show");
     });
+});
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-    document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+// PROJECT DATA (từ CV)
+const data = {
+    tingbox: {
+        title: "TingBox",
+        desc: "IoT transaction speaker for real-time voice notification",
+        resp: [
+            "Design microservices architecture",
+            "Build real-time communication (WebSocket)",
+            "Handle messaging via Kafka & MQTT",
+            "Optimize performance & debugging"
+        ],
+        tech: "Spring Boot, Kafka, MQTT, WebSocket, Docker, Kubernetes"
+    },
+    nextshop: {
+        title: "NextShop",
+        desc: "E-commerce management platform",
+        resp: [
+            "Design RESTful APIs",
+            "Database schema design",
+            "Handle order & merchant system",
+            "Optimize performance"
+        ],
+        tech: "Spring Boot, MongoDB, Redis"
+    },
+    notify: {
+        title: "Notify",
+        desc: "Push notification system using FCM",
+        resp: [
+            "Implement FCM push (token & topic)",
+            "Handle batch processing",
+            "Ensure delivery performance",
+            "Debug notification issues"
+        ],
+        tech: "Firebase FCM, Spring Boot"
+    },
+    loyalty: {
+        title: "Loyalty",
+        desc: "Customer loyalty & promotion system",
+        resp: [
+            "Build point accumulation logic",
+            "Promotion & ranking system",
+            "Optimize database queries"
+        ],
+        tech: "Spring Boot, MongoDB"
+    },
+    crm: {
+        title: "Customer Care",
+        desc: "CRM system for customer management",
+        resp: [
+            "Manage customer profiles",
+            "Support interaction system",
+            "Build internal APIs"
+        ],
+        tech: "Spring Boot, REST API"
+    }
+};
+
+// modal logic
+const modal = document.getElementById("modal");
+const title = document.getElementById("title");
+const desc = document.getElementById("desc");
+const resp = document.getElementById("resp");
+const tech = document.getElementById("tech");
+
+document.querySelectorAll(".project").forEach(card => {
+    card.onclick = () => {
+        const d = data[card.dataset.id];
+
+        title.innerText = d.title;
+        desc.innerText = d.desc;
+        tech.innerText = d.tech;
+
+        resp.innerHTML = "";
+        d.resp.forEach(r => {
+            const li = document.createElement("li");
+            li.innerText = r;
+            resp.appendChild(li);
+        });
+
+        modal.style.display = "block";
+    }
+});
+
+document.querySelector(".close").onclick = () => modal.style.display = "none";
+
+window.onclick = e => {
+    if(e.target == modal) modal.style.display = "none";
+};
 </script>
 
 </body>
