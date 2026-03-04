@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nguyen Ngoc Dieu | Java Backend Developer</title>
+<title>Nguyen Ngoc Dieu | Backend Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -44,11 +44,11 @@ h2 { margin-bottom: 20px; }
     margin-bottom: 20px;
     backdrop-filter: blur(10px);
     transition: 0.3s;
-    cursor: pointer;
+    cursor: default;
 }
 
 .card:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px);
 }
 
 /* GRID */
@@ -71,6 +71,15 @@ h2 { margin-bottom: 20px; }
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* PROJECT CARD */
+.project {
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-5px) scale(1.02);
 }
 
 /* MODAL */
@@ -109,7 +118,7 @@ ul {
 }
 
 .tech {
-    margin-top: 15px;
+    margin-top: 10px;
     color: #00d4ff;
 }
 </style>
@@ -117,19 +126,63 @@ ul {
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
     <h1>Nguyen Ngoc Dieu</h1>
     <h2 class="typing"></h2>
-    <p>Java Backend Developer | Microservices | Kafka | Kubernetes</p>
+    <p>Backend Engineer | Microservices | Kafka | Distributed Systems</p>
 </section>
 
+<!-- QUICK STATS -->
+<section class="hidden">
+    <div class="grid grid-2">
+        <div class="card"><h3>5+</h3><p>Years Experience</p></div>
+        <div class="card"><h3>Microservices</h3><p>Kafka, gRPC, WebSocket</p></div>
+        <div class="card"><h3>Realtime</h3><p>IoT, Notifications</p></div>
+        <div class="card"><h3>DevOps</h3><p>Docker, K8s, CI/CD</p></div>
+    </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="hidden">
+    <h2>Professional Summary</h2>
+    <div class="card">
+        Backend engineer with 5+ years building scalable systems in fintech domain.
+        Strong experience in microservices architecture, event-driven systems, and real-time processing.
+        Focus on performance optimization, reliability, and maintainability.
+    </div>
+
+    <div class="grid grid-2">
+        <div class="card">
+            <h3>Core Strengths</h3>
+            <ul>
+                <li>Microservices & system design</li>
+                <li>Kafka & async processing</li>
+                <li>Database optimization</li>
+                <li>High-performance backend</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>System Experience</h3>
+            <ul>
+                <li>IoT (TingBox)</li>
+                <li>FCM notification system</li>
+                <li>CRM & Loyalty systems</li>
+                <li>E-commerce platform</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
 <section class="hidden">
     <h2>Projects</h2>
     <div class="grid grid-2">
 
         <div class="card project" data-id="tingbox">
             <h3>TingBox</h3>
-            <p>IoT speaker for real-time transaction notifications</p>
+            <p>IoT real-time transaction speaker</p>
         </div>
 
         <div class="card project" data-id="nextshop">
@@ -139,19 +192,39 @@ ul {
 
         <div class="card project" data-id="notify">
             <h3>Notify</h3>
-            <p>Push notification system (FCM)</p>
+            <p>Push notification system</p>
         </div>
 
         <div class="card project" data-id="loyalty">
             <h3>Loyalty</h3>
-            <p>Customer loyalty & promotion system</p>
+            <p>Customer reward system</p>
         </div>
 
         <div class="card project" data-id="crm">
             <h3>Customer Care</h3>
-            <p>CRM system for customer management</p>
+            <p>CRM platform</p>
         </div>
 
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="hidden">
+    <h2>Contact & Availability</h2>
+
+    <div class="card">
+        <p><strong>Email:</strong> nndieu88@gmail.com</p>
+        <p><strong>Phone:</strong> 0373246168</p>
+        <p><strong>Location:</strong> Hanoi, Vietnam</p>
+    </div>
+
+    <div class="card">
+        <h3>Open to</h3>
+        <ul>
+            <li>Senior Backend Engineer</li>
+            <li>Distributed Systems / Microservices</li>
+            <li>Fintech / High-scale systems</li>
+        </ul>
     </div>
 </section>
 
@@ -171,8 +244,8 @@ ul {
 </div>
 
 <script>
-// typing
-const text = "Senior Java Backend Developer";
+// typing effect
+const text = "Senior Backend Engineer";
 let i = 0;
 function typing(){
     if(i < text.length){
@@ -191,27 +264,26 @@ const observer = new IntersectionObserver(entries => {
 });
 document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-// PROJECT DATA (từ CV)
+// project data
 const data = {
     tingbox: {
         title: "TingBox",
-        desc: "IoT transaction speaker for real-time voice notification",
+        desc: "IoT speaker delivering real-time transaction notifications",
         resp: [
-            "Design microservices architecture",
-            "Build real-time communication (WebSocket)",
-            "Handle messaging via Kafka & MQTT",
-            "Optimize performance & debugging"
+            "Designed microservices architecture",
+            "Implemented real-time communication (WebSocket)",
+            "Handled Kafka & MQTT messaging",
+            "Optimized performance & debugging"
         ],
         tech: "Spring Boot, Kafka, MQTT, WebSocket, Docker, Kubernetes"
     },
     nextshop: {
         title: "NextShop",
-        desc: "E-commerce management platform",
+        desc: "E-commerce platform for merchant management",
         resp: [
-            "Design RESTful APIs",
+            "Designed REST APIs",
             "Database schema design",
-            "Handle order & merchant system",
-            "Optimize performance"
+            "Optimized performance"
         ],
         tech: "Spring Boot, MongoDB, Redis"
     },
@@ -219,20 +291,19 @@ const data = {
         title: "Notify",
         desc: "Push notification system using FCM",
         resp: [
-            "Implement FCM push (token & topic)",
-            "Handle batch processing",
-            "Ensure delivery performance",
-            "Debug notification issues"
+            "Implemented FCM push",
+            "Handled batch processing",
+            "Optimized delivery"
         ],
-        tech: "Firebase FCM, Spring Boot"
+        tech: "Spring Boot, Firebase FCM"
     },
     loyalty: {
         title: "Loyalty",
         desc: "Customer loyalty & promotion system",
         resp: [
-            "Build point accumulation logic",
-            "Promotion & ranking system",
-            "Optimize database queries"
+            "Designed point system",
+            "Promotion logic",
+            "Optimized queries"
         ],
         tech: "Spring Boot, MongoDB"
     },
@@ -240,11 +311,10 @@ const data = {
         title: "Customer Care",
         desc: "CRM system for customer management",
         resp: [
-            "Manage customer profiles",
-            "Support interaction system",
-            "Build internal APIs"
+            "Customer profile management",
+            "Support interaction APIs"
         ],
-        tech: "Spring Boot, REST API"
+        tech: "Spring Boot"
     }
 };
 
