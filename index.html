@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Backend Java Engineer | Portfolio</title>
+<title>Nguyen Ngoc Dieu | Backend Engineer</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -20,22 +22,22 @@ scroll-behavior:smooth;
 }
 
 .section{
-padding:90px 20px;
 max-width:1100px;
 margin:auto;
+padding:90px 20px;
 }
 
 .card{
 background:#1e293b;
-border-radius:16px;
+border-radius:14px;
 padding:24px;
-transition:0.25s;
 cursor:pointer;
+transition:0.25s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,.4);
 }
 
 .badge{
@@ -62,17 +64,24 @@ max-width:700px;
 width:90%;
 }
 
+header{
+backdrop-filter: blur(8px);
+}
+
 </style>
 
 </head>
+
 
 <body>
 
 <!-- HEADER -->
 
-<header class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+<header class="sticky top-0 z-50 bg-slate-900/70">
 
-<h1 class="text-xl font-bold">N. Dieu</h1>
+<div class="max-w-6xl mx-auto flex justify-between items-center p-6">
+
+<h1 class="font-bold text-lg">N. Dieu</h1>
 
 <nav class="space-x-6 text-sm">
 
@@ -82,6 +91,8 @@ width:90%;
 <a href="#contact">Contact</a>
 
 </nav>
+
+</div>
 
 </header>
 
@@ -95,9 +106,13 @@ Senior Backend Java Engineer
 </h1>
 
 <p class="text-slate-400 max-w-xl mx-auto">
+
 Backend engineer specializing in distributed systems,
-high throughput backend services, and microservice architecture.
-Experienced with Java, Kafka, MongoDB, and event-driven systems.
+high-throughput services, and microservice architecture.
+
+Experienced with Java, Kafka, MongoDB, Redis,
+and event-driven systems.
+
 </p>
 
 </section>
@@ -112,11 +127,14 @@ Experienced with Java, Kafka, MongoDB, and event-driven systems.
 <p class="text-slate-300 leading-relaxed">
 
 Backend developer with strong experience building scalable
-microservice systems. Focus areas include performance
-optimization, distributed architecture, and event-driven design.
+enterprise systems.
 
-Experience designing high-traffic systems using Java,
-Spring Boot, Kafka, Redis, and MongoDB.
+Specialized in microservice architecture, asynchronous messaging,
+and real-time communication systems.
+
+Hands-on experience designing systems using
+Kafka, WebSocket, REST, gRPC and optimizing
+MongoDB and SQL databases.
 
 </p>
 
@@ -131,14 +149,18 @@ Spring Boot, Kafka, Redis, and MongoDB.
 
 <div class="grid md:grid-cols-3 gap-6">
 
+
 <div class="card">
-<h3 class="font-semibold mb-4">Backend</h3>
+
+<h3 class="font-semibold mb-4">Programming</h3>
 
 <div class="flex flex-wrap gap-2">
+
 <span class="badge">Java</span>
-<span class="badge">Spring Boot</span>
-<span class="badge">Microservices</span>
-<span class="badge">REST API</span>
+<span class="badge">C#</span>
+<span class="badge">JavaScript</span>
+<span class="badge">ReactJS</span>
+
 </div>
 
 </div>
@@ -146,12 +168,16 @@ Spring Boot, Kafka, Redis, and MongoDB.
 
 <div class="card">
 
-<h3 class="font-semibold mb-4">Data</h3>
+<h3 class="font-semibold mb-4">Databases</h3>
 
 <div class="flex flex-wrap gap-2">
+
 <span class="badge">MongoDB</span>
+<span class="badge">MySQL</span>
+<span class="badge">SQL Server</span>
+<span class="badge">Oracle</span>
 <span class="badge">Redis</span>
-<span class="badge">SQL</span>
+
 </div>
 
 </div>
@@ -162,13 +188,18 @@ Spring Boot, Kafka, Redis, and MongoDB.
 <h3 class="font-semibold mb-4">Infrastructure</h3>
 
 <div class="flex flex-wrap gap-2">
+
 <span class="badge">Kafka</span>
 <span class="badge">Docker</span>
-<span class="badge">CI/CD</span>
-<span class="badge">Cloudflare</span>
+<span class="badge">Kubernetes</span>
+<span class="badge">GitLab CI/CD</span>
+<span class="badge">Kibana</span>
+<span class="badge">APM</span>
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -184,30 +215,25 @@ Spring Boot, Kafka, Redis, and MongoDB.
 
 <div class="grid md:grid-cols-2 gap-8">
 
-
-<div class="card" onclick="openProject('p1')">
-
-<h3 class="text-xl font-semibold mb-2">
-Payment Processing Platform
-</h3>
-
-<p class="text-sm text-slate-400">
-High throughput backend system for merchant payments.
+<div class="card" onclick="openProject('nextpay')">
+<h3 class="text-xl font-semibold">NextPay Platform Systems</h3>
+<p class="text-slate-400 text-sm">
+NextShop, TingBox, Notify, Loyalty, Customer-care
 </p>
-
 </div>
 
-
-<div class="card" onclick="openProject('p2')">
-
-<h3 class="text-xl font-semibold mb-2">
-Notification Service
-</h3>
-
-<p class="text-sm text-slate-400">
-Scalable push notification platform.
+<div class="card" onclick="openProject('baoviet')">
+<h3 class="text-xl font-semibold">Insurance Systems</h3>
+<p class="text-slate-400 text-sm">
+Kcare, An Tam Song Khoe, Micro Insurance
 </p>
+</div>
 
+<div class="card" onclick="openProject('easybooks')">
+<h3 class="text-xl font-semibold">EasyBooks Accounting</h3>
+<p class="text-slate-400 text-sm">
+Enterprise accounting software
+</p>
 </div>
 
 </div>
@@ -226,20 +252,18 @@ Scalable push notification platform.
 
 <p class="text-slate-400">Github: github.com/nndieu88</p>
 
-<p class="text-slate-400">LinkedIn: linkedin.com/in/yourprofile</p>
-
 </section>
 
 
-<footer class="text-center text-sm text-slate-500 pb-10">
+<footer class="text-center text-slate-500 text-sm pb-10">
 
-© 2026 Portfolio
+© 2026 N. Dieu
 
 </footer>
 
 
 
-<!-- MODALS -->
+<!-- MODAL -->
 
 <div id="modal" class="modal" onclick="closeModal()">
 
@@ -252,52 +276,110 @@ Scalable push notification platform.
 </div>
 
 
-
 <script>
 
 const projects = {
 
-p1: `
-<h2 class="text-xl font-bold mb-4">Payment Processing Platform</h2>
+nextpay: `
+
+<h2 class="text-xl font-bold mb-4">NextPay Internal Platforms</h2>
 
 <p class="text-slate-400 mb-4">
-Merchant payment processing backend.
+Systems: NextShop, TingBox, Notify, Loyalty, Customer-care
 </p>
+
+<h3 class="font-semibold mt-4">Period</h3>
+<p>03/2023 - Present</p>
+
+<h3 class="font-semibold mt-4">Team size</h3>
+<p>2</p>
 
 <h3 class="font-semibold mt-4">Role</h3>
 <p>Backend Developer</p>
 
-<h3 class="font-semibold mt-4">Stack</h3>
-<p>Java, Spring Boot, Kafka, Redis, MongoDB</p>
+<h3 class="font-semibold mt-4">Responsibilities</h3>
 
-<h3 class="font-semibold mt-4">Architecture</h3>
-<p>Microservice + Event Driven</p>
+<ul class="list-disc ml-6">
 
-<h3 class="font-semibold mt-4">Impact</h3>
-<ul class="list-disc ml-5">
-<li>Optimized MongoDB aggregation queries</li>
-<li>Reduced latency from 2s → 200ms</li>
-<li>Kafka used for async event processing</li>
+<li>Designed system architecture and database schemas</li>
+<li>Developed REST APIs, gRPC services and WebSocket communication</li>
+<li>Managed asynchronous messaging with Kafka and MQX</li>
+<li>Optimized source code and debugging</li>
+<li>Implemented CI/CD using Docker, Kubernetes and GitLab</li>
+<li>Monitored performance via APM and Kibana</li>
+
 </ul>
-`,
 
-p2: `
-<h2 class="text-xl font-bold mb-4">Notification Platform</h2>
+<h3 class="font-semibold mt-4">Tech Stack</h3>
 
-<p class="text-slate-400 mb-4">
-System for sending push notifications to users.
+<p>
+Spring Boot 3.x, Java 11/17/21, MongoDB, Redis,
+Kafka, Kafka AWS Cluster, MQX, FCM,
+Docker, Kubernetes, GitLab CI/CD
 </p>
 
-<h3 class="font-semibold mt-4">Stack</h3>
-<p>Java, Spring Boot, Kafka, FCM</p>
+`,
 
-<h3 class="font-semibold mt-4">Features</h3>
+baoviet: `
 
-<ul class="list-disc ml-5">
-<li>Async message queue</li>
-<li>High concurrency support</li>
-<li>Event driven architecture</li>
+<h2 class="text-xl font-bold mb-4">Insurance Systems</h2>
+
+<p>Bảo hiểm Kcare, An tâm sống khỏe, người vay vốn</p>
+
+<h3 class="font-semibold mt-4">Period</h3>
+<p>05/2022 - 03/2023</p>
+
+<h3 class="font-semibold mt-4">Customer</h3>
+<p>Bảo Việt</p>
+
+<h3 class="font-semibold mt-4">Responsibilities</h3>
+
+<ul class="list-disc ml-6">
+
+<li>Migrated system from PrimeFaces to Spring Boot</li>
+<li>Developed backend services</li>
+<li>Designed database structure</li>
+<li>Optimized performance and bug fixing</li>
+
 </ul>
+
+<h3 class="font-semibold mt-4">Tech Stack</h3>
+
+<p>Java 8, AngularJS, Oracle</p>
+
+`,
+
+easybooks: `
+
+<h2 class="text-xl font-bold mb-4">EasyBooks Accounting</h2>
+
+<p>Accounting software for enterprises</p>
+
+<h3 class="font-semibold mt-4">Period</h3>
+<p>03/2020 - 05/2022</p>
+
+<h3 class="font-semibold mt-4">Customer</h3>
+<p>Softdreams</p>
+
+<h3 class="font-semibold mt-4">Team size</h3>
+<p>20</p>
+
+<h3 class="font-semibold mt-4">Responsibilities</h3>
+
+<ul class="list-disc ml-6">
+
+<li>Migrated system from PrimeFaces to Spring Boot</li>
+<li>Developed backend services</li>
+<li>Designed database</li>
+<li>Implemented reports</li>
+<li>Bug fixing and testing</li>
+
+</ul>
+
+<h3 class="font-semibold mt-4">Tech Stack</h3>
+
+<p>Java 8, Angular 5, SQL Server, MySQL</p>
+
 `
 }
 
@@ -317,5 +399,7 @@ document.getElementById("modal").style.display="none"
 
 </script>
 
+
 </body>
+
 </html>
