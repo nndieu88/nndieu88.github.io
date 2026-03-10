@@ -3,352 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nguyen Ngoc Dieu | Backend Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Backend Java Engineer | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+
+body{
+font-family:Inter;
+background:#0f172a;
+color:#e2e8f0;
+scroll-behavior:smooth;
 }
 
-body {
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
+.section{
+padding:90px 20px;
+max-width:1100px;
+margin:auto;
 }
 
-section {
-    padding: 80px 10%;
+.card{
+background:#1e293b;
+border-radius:16px;
+padding:24px;
+transition:0.25s;
+cursor:pointer;
 }
 
-h1 { font-size: 48px; }
-h2 { margin-bottom: 20px; }
-
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-.typing { color: #00d4ff; }
-
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    cursor: default;
+.badge{
+background:#334155;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.7);
+display:none;
+align-items:center;
+justify-content:center;
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    gap: 20px;
+.modal-content{
+background:#1e293b;
+padding:30px;
+border-radius:16px;
+max-width:700px;
+width:90%;
 }
 
-.grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* ANIMATION */
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* PROJECT CARD */
-.project {
-    cursor: pointer;
-}
-
-.project:hover {
-    transform: translateY(-5px) scale(1.02);
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    background: #1e2a38;
-    margin: 5% auto;
-    padding: 30px;
-    width: 70%;
-    border-radius: 12px;
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from {opacity:0; transform: translateY(30px);}
-    to {opacity:1; transform: translateY(0);}
-}
-
-.close {
-    float: right;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-.tech {
-    margin-top: 10px;
-    color: #00d4ff;
-}
 </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
+
+<header class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+
+<h1 class="text-xl font-bold">N. Dieu</h1>
+
+<nav class="space-x-6 text-sm">
+
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+
 <!-- HERO -->
-<section class="hero">
-    <h1>Nguyen Ngoc Dieu</h1>
-    <h2 class="typing"></h2>
-    <p>Backend Engineer | Microservices | Kafka | Distributed Systems</p>
+
+<section class="section text-center">
+
+<h1 class="text-4xl font-bold mb-6">
+Senior Backend Java Engineer
+</h1>
+
+<p class="text-slate-400 max-w-xl mx-auto">
+Backend engineer specializing in distributed systems,
+high throughput backend services, and microservice architecture.
+Experienced with Java, Kafka, MongoDB, and event-driven systems.
+</p>
+
 </section>
 
-<!-- QUICK STATS -->
-<section class="hidden">
-    <div class="grid grid-2">
-        <div class="card"><h3>5+</h3><p>Years Experience</p></div>
-        <div class="card"><h3>Microservices</h3><p>Kafka, gRPC, WebSocket</p></div>
-        <div class="card"><h3>Realtime</h3><p>IoT, Notifications</p></div>
-        <div class="card"><h3>DevOps</h3><p>Docker, K8s, CI/CD</p></div>
-    </div>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<h2 class="text-3xl font-bold mb-6">About</h2>
+
+<p class="text-slate-300 leading-relaxed">
+
+Backend developer with strong experience building scalable
+microservice systems. Focus areas include performance
+optimization, distributed architecture, and event-driven design.
+
+Experience designing high-traffic systems using Java,
+Spring Boot, Kafka, Redis, and MongoDB.
+
+</p>
+
 </section>
 
-<!-- SUMMARY -->
-<section class="hidden">
-    <h2>Professional Summary</h2>
-    <div class="card">
-        Backend engineer with 5+ years building scalable systems in fintech domain.
-        Strong experience in microservices architecture, event-driven systems, and real-time processing.
-        Focus on performance optimization, reliability, and maintainability.
-    </div>
 
-    <div class="grid grid-2">
-        <div class="card">
-            <h3>Core Strengths</h3>
-            <ul>
-                <li>Microservices & system design</li>
-                <li>Kafka & async processing</li>
-                <li>Database optimization</li>
-                <li>High-performance backend</li>
-            </ul>
-        </div>
+<!-- SKILLS -->
 
-        <div class="card">
-            <h3>System Experience</h3>
-            <ul>
-                <li>IoT (TingBox)</li>
-                <li>FCM notification system</li>
-                <li>CRM & Loyalty systems</li>
-                <li>E-commerce platform</li>
-            </ul>
-        </div>
-    </div>
-</section>
+<section id="skills" class="section">
 
-<!-- PROJECTS -->
-<section class="hidden">
-    <h2>Projects</h2>
-    <div class="grid grid-2">
+<h2 class="text-3xl font-bold mb-10">Technical Skills</h2>
 
-        <div class="card project" data-id="tingbox">
-            <h3>TingBox</h3>
-            <p>IoT real-time transaction speaker</p>
-        </div>
+<div class="grid md:grid-cols-3 gap-6">
 
-        <div class="card project" data-id="nextshop">
-            <h3>NextShop</h3>
-            <p>E-commerce management platform</p>
-        </div>
+<div class="card">
+<h3 class="font-semibold mb-4">Backend</h3>
 
-        <div class="card project" data-id="notify">
-            <h3>Notify</h3>
-            <p>Push notification system</p>
-        </div>
-
-        <div class="card project" data-id="loyalty">
-            <h3>Loyalty</h3>
-            <p>Customer reward system</p>
-        </div>
-
-        <div class="card project" data-id="crm">
-            <h3>Customer Care</h3>
-            <p>CRM platform</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="hidden">
-    <h2>Contact & Availability</h2>
-
-    <div class="card">
-        <p><strong>Email:</strong> nndieu88@gmail.com</p>
-        <p><strong>Phone:</strong> 0373246168</p>
-        <p><strong>Location:</strong> Hanoi, Vietnam</p>
-    </div>
-
-    <div class="card">
-        <h3>Open to</h3>
-        <ul>
-            <li>Senior Backend Engineer</li>
-            <li>Distributed Systems / Microservices</li>
-            <li>Fintech / High-scale systems</li>
-        </ul>
-    </div>
-</section>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="title"></h2>
-        <p id="desc"></p>
-
-        <h3>Responsibilities</h3>
-        <ul id="resp"></ul>
-
-        <h3>Technologies</h3>
-        <p id="tech" class="tech"></p>
-    </div>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Java</span>
+<span class="badge">Spring Boot</span>
+<span class="badge">Microservices</span>
+<span class="badge">REST API</span>
 </div>
 
+</div>
+
+
+<div class="card">
+
+<h3 class="font-semibold mb-4">Data</h3>
+
+<div class="flex flex-wrap gap-2">
+<span class="badge">MongoDB</span>
+<span class="badge">Redis</span>
+<span class="badge">SQL</span>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3 class="font-semibold mb-4">Infrastructure</h3>
+
+<div class="flex flex-wrap gap-2">
+<span class="badge">Kafka</span>
+<span class="badge">Docker</span>
+<span class="badge">CI/CD</span>
+<span class="badge">Cloudflare</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="section">
+
+<h2 class="text-3xl font-bold mb-10">Projects</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+
+<div class="card" onclick="openProject('p1')">
+
+<h3 class="text-xl font-semibold mb-2">
+Payment Processing Platform
+</h3>
+
+<p class="text-sm text-slate-400">
+High throughput backend system for merchant payments.
+</p>
+
+</div>
+
+
+<div class="card" onclick="openProject('p2')">
+
+<h3 class="text-xl font-semibold mb-2">
+Notification Service
+</h3>
+
+<p class="text-sm text-slate-400">
+Scalable push notification platform.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+<h2 class="text-3xl font-bold mb-6">Contact</h2>
+
+<p class="text-slate-400">Email: your-email@gmail.com</p>
+
+<p class="text-slate-400">Github: github.com/nndieu88</p>
+
+<p class="text-slate-400">LinkedIn: linkedin.com/in/yourprofile</p>
+
+</section>
+
+
+<footer class="text-center text-sm text-slate-500 pb-10">
+
+© 2026 Portfolio
+
+</footer>
+
+
+
+<!-- MODALS -->
+
+<div id="modal" class="modal" onclick="closeModal()">
+
+<div class="modal-content" onclick="event.stopPropagation()">
+
+<div id="modal-body"></div>
+
+</div>
+
+</div>
+
+
+
 <script>
-// typing effect
-const text = "Senior Backend Engineer";
-let i = 0;
-function typing(){
-    if(i < text.length){
-        document.querySelector(".typing").innerHTML += text[i];
-        i++;
-        setTimeout(typing, 50);
-    }
+
+const projects = {
+
+p1: `
+<h2 class="text-xl font-bold mb-4">Payment Processing Platform</h2>
+
+<p class="text-slate-400 mb-4">
+Merchant payment processing backend.
+</p>
+
+<h3 class="font-semibold mt-4">Role</h3>
+<p>Backend Developer</p>
+
+<h3 class="font-semibold mt-4">Stack</h3>
+<p>Java, Spring Boot, Kafka, Redis, MongoDB</p>
+
+<h3 class="font-semibold mt-4">Architecture</h3>
+<p>Microservice + Event Driven</p>
+
+<h3 class="font-semibold mt-4">Impact</h3>
+<ul class="list-disc ml-5">
+<li>Optimized MongoDB aggregation queries</li>
+<li>Reduced latency from 2s → 200ms</li>
+<li>Kafka used for async event processing</li>
+</ul>
+`,
+
+p2: `
+<h2 class="text-xl font-bold mb-4">Notification Platform</h2>
+
+<p class="text-slate-400 mb-4">
+System for sending push notifications to users.
+</p>
+
+<h3 class="font-semibold mt-4">Stack</h3>
+<p>Java, Spring Boot, Kafka, FCM</p>
+
+<h3 class="font-semibold mt-4">Features</h3>
+
+<ul class="list-disc ml-5">
+<li>Async message queue</li>
+<li>High concurrency support</li>
+<li>Event driven architecture</li>
+</ul>
+`
 }
-typing();
 
-// scroll animation
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if(e.isIntersecting) e.target.classList.add("show");
-    });
-});
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+function openProject(id){
 
-// project data
-const data = {
-    tingbox: {
-        title: "TingBox",
-        desc: "IoT speaker delivering real-time transaction notifications",
-        resp: [
-            "Designed microservices architecture",
-            "Implemented real-time communication (WebSocket)",
-            "Handled Kafka & MQTT messaging",
-            "Optimized performance & debugging"
-        ],
-        tech: "Spring Boot, Kafka, MQTT, WebSocket, Docker, Kubernetes"
-    },
-    nextshop: {
-        title: "NextShop",
-        desc: "E-commerce platform for merchant management",
-        resp: [
-            "Designed REST APIs",
-            "Database schema design",
-            "Optimized performance"
-        ],
-        tech: "Spring Boot, MongoDB, Redis"
-    },
-    notify: {
-        title: "Notify",
-        desc: "Push notification system using FCM",
-        resp: [
-            "Implemented FCM push",
-            "Handled batch processing",
-            "Optimized delivery"
-        ],
-        tech: "Spring Boot, Firebase FCM"
-    },
-    loyalty: {
-        title: "Loyalty",
-        desc: "Customer loyalty & promotion system",
-        resp: [
-            "Designed point system",
-            "Promotion logic",
-            "Optimized queries"
-        ],
-        tech: "Spring Boot, MongoDB"
-    },
-    crm: {
-        title: "Customer Care",
-        desc: "CRM system for customer management",
-        resp: [
-            "Customer profile management",
-            "Support interaction APIs"
-        ],
-        tech: "Spring Boot"
-    }
-};
+document.getElementById("modal-body").innerHTML = projects[id]
 
-// modal logic
-const modal = document.getElementById("modal");
-const title = document.getElementById("title");
-const desc = document.getElementById("desc");
-const resp = document.getElementById("resp");
-const tech = document.getElementById("tech");
+document.getElementById("modal").style.display="flex"
 
-document.querySelectorAll(".project").forEach(card => {
-    card.onclick = () => {
-        const d = data[card.dataset.id];
+}
 
-        title.innerText = d.title;
-        desc.innerText = d.desc;
-        tech.innerText = d.tech;
+function closeModal(){
 
-        resp.innerHTML = "";
-        d.resp.forEach(r => {
-            const li = document.createElement("li");
-            li.innerText = r;
-            resp.appendChild(li);
-        });
+document.getElementById("modal").style.display="none"
 
-        modal.style.display = "block";
-    }
-});
+}
 
-document.querySelector(".close").onclick = () => modal.style.display = "none";
-
-window.onclick = e => {
-    if(e.target == modal) modal.style.display = "none";
-};
 </script>
 
 </body>
