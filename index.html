@@ -87,6 +87,7 @@ backdrop-filter: blur(8px);
 
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+  <a href="#architecture ">Architecture</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 
@@ -205,6 +206,53 @@ MongoDB and SQL databases.
 
 </section>
 
+<!-- architecture -->
+<section id="architecture" class="section">
+
+<h2 class="text-3xl font-bold mb-10">System Architecture & Scalability</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="card">
+
+<ul class="list-disc ml-6 space-y-2 text-slate-300">
+
+<li>Horizontal scaling with Kubernetes HPA</li>
+
+<li>MongoDB Atlas managed database cluster</li>
+
+<li>Optimized database queries using indexes and aggregation pipelines</li>
+
+<li>High availability architecture with replicated services</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3 class="font-semibold mb-3">Typical Architecture</h3>
+
+<pre class="text-sm text-slate-400">
+Client
+   ↓
+API Gateway
+   ↓
+Auth Service
+Payment Service
+Notification Service
+   ↓
+Kafka Event Bus
+   ↓
+MongoDB / Redis
+</pre>
+
+</div>
+
+</div>
+
+</section>  
 
 
 <!-- PROJECTS -->
